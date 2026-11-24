@@ -36,7 +36,7 @@ module.exports = async function handler(req, res) {
         method: 'POST',
         headers: { 'content-type': 'application/json', authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
         body: JSON.stringify({
-          model: process.env.ADVISOR_MODEL || 'gpt-5.4-mini',   // set ADVISOR_MODEL to any model your account can use
+          model: 'gpt-5.4-mini',
           max_completion_tokens: 1500,
           messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: userMsg }]
         })
